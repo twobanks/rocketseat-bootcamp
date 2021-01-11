@@ -8,6 +8,7 @@ import { Container, Header, HeaderContent, Profile, Content, Schedule, NextAppoi
 import logo from '../../assets/logo.svg';
 import { useAuth } from '../../hooks/auth';
 import api from '../../services/api';
+import { Link } from 'react-router-dom';
 
 interface MonthAvailabilityItem {
       day: number;
@@ -102,7 +103,7 @@ const Dashboard: React.FC = () => {
                                     <img src={"https://avatars1.githubusercontent.com/u/2577611?s=460&u=118117a943294dfb5fb7e4050061133cf7476329&v=4"} alt={user.name} />
                                     <div>
                                           <span>Bem-vindo,</span>
-                                          <strong>{user.name}</strong>
+                                          <Link to="/profile"><strong>{user.name}</strong></Link>
                                     </div>
                               </Profile>
                               <button type="button" onClick={signOut}>
